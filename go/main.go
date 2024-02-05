@@ -68,10 +68,7 @@ func create_Container(containerName string, osName string) Result {
 	}
 
 	// Dockerfileの内容を定義
-	dockerfileContent := `
-FROM ` + osName + `:latest
-# 追加の設定やインストールコマンド
-`
+	dockerfileContent := `FROM ` + osName + `:latest`
 	// Dockerfileに内容を書き込む
 	dockerfile, err := os.Create("Dockerfile")
 	if err != nil {
@@ -149,11 +146,9 @@ func main() {
 		// アクセスを許可するメソッドを指定
 		AllowMethods: []string{http.MethodGet, http.MethodPut, http.MethodPost, http.MethodDelete},
 		// アクセスを許可するヘッダーを指定
-		AllowHeaders: []string{echo.HeaderContentType, echo.HeaderAuthorization, "X-CSRF-Header"},
-		// cookieを使う場合はtrue。後々cookieを使うつもりなのでtrueに。
+		AllowHeaders:     []string{echo.HeaderContentType, echo.HeaderAuthorization, "X-CSRF-Header"},
 		AllowCredentials: true,
 	}))
-	// CsrfMiddlewareは後ほど定義します。
 	u := &User{
 		Name:  "John",
 		Email: "jon@labstack.com",
