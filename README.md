@@ -10,3 +10,7 @@ cd Docker-Web-Service/
 cd Docker-Web-Service/
 ./start.bat
 ```
+1.Nextが動作しているurlにアクセス
+2.ビルドしたいコンテナのOSを選択
+3.コンテナの名前を入力
+4.submitボタンを押す
