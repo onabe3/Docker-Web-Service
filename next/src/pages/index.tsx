@@ -16,7 +16,7 @@ export default function Home() {
     event.preventDefault()
  
     // const formData = new FormData(event.currentTarget)
-    const res = await fetch('/api/hello', {
+    const res = await fetch('/api/build', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
